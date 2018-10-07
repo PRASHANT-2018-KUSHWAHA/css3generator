@@ -1,0 +1,59 @@
+<div class="jumbotron text-center ">
+  <h1 class="display-4"  [style.text-shadow]="this.horizontal +'px '+ this.vertical +'px '+ this.blur +'px'+ this.color" >BOX SHADOW GENERATOR</h1>
+     <div class="jumbotron-content">
+        <div class="row justify-content-md-center">
+          
+          <div class="box" [style.box-shadow]="this.horizontal +'px '+ this.vertical +'px '+ this.blur +'px '+ this.spread +'px '+ this.color">
+            <h3>Box</h3>  
+             
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="horizontal">Horizontal</label>
+                  <input type="number" class="form-control" [(ngModel)]="horizontal" id="horizontal">
+                  
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="vertical">Vertical</label>
+                  <input type="number" class="form-control" [(ngModel)]="vertical" id="vertical">
+                
+                </div>
+              </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="blur">Blur</label>
+                  <input type="number" class="form-control" [(ngModel)]="blur" id="blur">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="spread">spread</label>
+                  <input type="number" class="form-control" [(ngModel)]="spread" id="spread">
+
+                </div>
+          </div>
+                <div class="form-group">
+                    <input type="button" 
+                  
+                        [(colorPicker)]="color"
+                        [cpAlphaChannel]="'always'"
+                        [cpOutputFormat]="'hex'"
+                        [cpPosition]="'top'"
+                        [cpPresetColors]="['#fff', '#000', '#2889e9', '#e920e9', '#fff500']"
+                        [value]='color' 
+                        name="color" 
+                        class="input-control "> 
+                  </div>
+
+            </div>
+        </div>
+     </div>
+</div>
+
+
+<div class="codeText">
+    <h3>Your Code is here</h3> 
+     <pre><code class="language-css" 
+      innerHtml="    <span class='token property'>box-shadow</span><span class='token punctuation'>(</span>{{this.horizontal}}px ,{{this.vertical}}px, {{this.blur}}px {{this.spread}}px {{this.color}}}<span class='token punctuation'>)</span><span class='token punctuation'>;</span> " 
+      
+      ></code></pre>   
+</div>
+  
